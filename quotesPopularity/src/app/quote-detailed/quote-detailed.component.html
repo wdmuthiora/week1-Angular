@@ -3,7 +3,7 @@
   <div class="card-body" ngFor="quote of quotes">
     <h4 class="card-title">{{quote.author}}</h4>
     <p class="card-text"> {{quote.quoteText}}</p>
-    
+
     <button class='btn btn-sm btn-success' style='margin-left:0.1em;' (click)="upVoteQuote(true)">Upvotes:
       {{quote.upVote}}
     </button>
@@ -12,7 +12,7 @@
       {{quote.downVote}}
     </button>
 
-    <button class='btn btn-sm btn-warning' style='margin-left:1em;'>
+    <button class='btn btn-sm btn-warning' style='margin-left:1em;' (click)="deleteQuote(true)">
       Delete [with prompt]
     </button>
   </div>

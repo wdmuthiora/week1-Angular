@@ -9,19 +9,24 @@ import { Quote } from '../quote';
 })
 export class QuoteDetailedComponent implements OnInit {
   @Input() quote!: Quote;
-  @Output() toUpvote = new EventEmitter<boolean>()
-  @Output() toDownvote = new EventEmitter<boolean>()
-    
+  @Output() toUpvote = new EventEmitter<boolean>();
+  @Output() toDownvote = new EventEmitter<boolean>();
+  @Output() toDelete = new EventEmitter<boolean>();
+
   //function to notify parent to upvote
-  upVoteQuote(upVote:boolean) {
-    this.toUpvote.emit(upVote)
-  };
+  upVoteQuote(upVote: boolean) {
+    this.toUpvote.emit(upVote);
+  }
 
   //function to notify parent to downvote
   downVoteQuote(downVote: boolean) {
-    this.toDownvote.emit(downVote)
-  };
+    this.toDownvote.emit(downVote);
+  }
 
+  // function to delete a quote in the parent
+  deleteQuote(deleteThisQuote:boolean) {
+    this.toDelete.emit(deleteThisQuote);
+  };
 
   constructor() {}
 
