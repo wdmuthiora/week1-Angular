@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-6">
       <div *ngFor="let quote of quotes">
-        <app-quote-detailed [quote]="quote"></app-quote-detailed>
+        <app-quote-detailed [quote]="quote" (toUpvote)="upVote($event, i)" (toDownvote)="downVote($event, i)"></app-quote-detailed>
       </div>
     </div>
     <div class="col-md-6">
