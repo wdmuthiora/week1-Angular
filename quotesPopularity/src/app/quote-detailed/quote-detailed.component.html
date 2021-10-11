@@ -1,9 +1,8 @@
-<h3>quote-detailed works!</h3>
 <!-- I'm going to treat each quote-detail section as a card -->
 <div class="card">
-  <div class="card-body">
-    <h4 class="card-title">Card title [Should be quote]</h4>
-    <p class="card-text">quote-detailed works! [Should be quote details]</p>
+  <div class="card-body" ngFor="quote of quotes">
+    <h4 class="card-title">[Should be quote author]</h4>
+    <p class="card-text"> [Should be quote details]</p>
     <button class='btn btn-sm btn-success' style='margin-left:0.1em;'>Upvote [with count]</button>
     <button class='btn btn-sm btn-danger' style='margin-left:1em'>Downvote [with count]</button>
     <button class='btn btn-sm btn-warning' style='margin-left:1em;'>Delete [with prompt]</button>

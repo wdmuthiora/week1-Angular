@@ -1,11 +1,10 @@
 <div class="container-fluid">
-  <p>quotes works!</p>
-
   <div class="row">
     <div class="col-md-6">
       <div *ngFor="let quote of quotes">
-      {{quote.quoteText}}</div>
-      <app-quote-detailed ></app-quote-detailed>
+        {{quote.quoteText}}
+        <app-quote-detailed [quote]="quote"></app-quote-detailed>
+      </div>
     </div>
     <div class="col-md-6">
       <app-quote-form></app-quote-form>
