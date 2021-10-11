@@ -1,4 +1,9 @@
 export class Quote {
-  author!: string;
-  quoteText!: string;
+  upVote: number;
+  downVote: number;
+  constructor(public author: string, public quoteText: string) {
+    this.upVote = 0;
+    this.downVote = 0;
+  }
+
 }
