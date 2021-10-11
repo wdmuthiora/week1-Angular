@@ -1,5 +1,4 @@
 export class Quote {
-<div class="container">
-  name!: string;
+  author!: string;
   quoteText!: string;
 }
