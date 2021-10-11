@@ -2,7 +2,6 @@
   <div class="row">
     <div class="col-md-6">
       <div *ngFor="let quote of quotes">
-        {{quote.quoteText}}
         <app-quote-detailed [quote]="quote"></app-quote-detailed>
       </div>
     </div>
