@@ -32,9 +32,7 @@ export class QuotesComponent implements OnInit {
   
   //delete a quote
   delete(index: number) {
-    let toPromptUser = confirm(
-      `Are you sure you want to delete this quote ${this.quotes[index].quoteText}?`
-    );
+    let toPromptUser = confirm(`Are you sure you want to delete this quote ${this.quotes[index].quoteText}?`);
     if (toPromptUser) {
       this.quotes.splice(index, 1);
     }
