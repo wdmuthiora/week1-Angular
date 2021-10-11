@@ -1,9 +1,7 @@
 <!-- I'm going to treat each quote-detail section as a card -->
 <div class="card"appHighlightLead>
   <div class="card-body" ngFor="quote of quotes">
-    <h4 class="card-title">{{quote.author}}</h4>
-    <p class="card-text"> {{quote.quoteText}}</p>
-
+    <app-quote-display [quote]="quote"></app-quote-display>
     <button class='btn btn-sm btn-success' style='margin-left:0.1em;' (click)="upVoteQuote(true)">Upvotes:
       {{quote.upVote}}
     </button>

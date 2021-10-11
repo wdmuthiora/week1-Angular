@@ -6,7 +6,9 @@
       <hr>
       <div *ngFor="let quote of quotes; let i=index" >
         <app-quote-detailed [quote]="quote" (toUpvote)="upVote(i)" (toDownvote)="downVote(i)" (toDelete)="delete(i)">
-        </app-quote-detailed>
+       
+ </app-quote-detailed>
+        
       </div>
     </div>
 
