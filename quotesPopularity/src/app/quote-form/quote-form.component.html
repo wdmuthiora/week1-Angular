@@ -2,22 +2,25 @@
   <hr>
   <h3 class="text-center">Create a new Quote</h3>
   <form #quoteForm="ngForm" (ngSubmit)="submitQuote()">
+    
 
     <div class="form-group">
       <label for="personSubmitting">Person Submitting</label>
-      <input type="text" required class="form-control"  id="personSubmitting" [(ngModel)]="newQuote.personSubmitting" personSubmitting="personSubmitting"  #personSubmitting="ngModel">
+      <input type="text" required class="form-control"  name="personSubmitting" ngModel #personSubmitting="ngModel">
+      {{personSubmitting.value}}
     </div>
 
     <div class="form-group">
       <label for="author">Author</label>
-      <input type="text" id="author" required class="form-control" [(ngModel)]="newQuote.author" author="author" #author="ngModel">
-      
+      <input type="text" name="author" required class="form-control" ngModel #author="ngModel">
+      {{author.value}}
 
     </div>
 
     <div class="form-group">
       <label for="quoteText">Quote</label>
-      <textarea type="text" required id="quoteText" cols="30" rows="10" class="form-control" [(ngModel)]="newQuote.quoteText" quoteText="quoteText" #quoteText="ngModel"></textarea>
+      <textarea type="text" required name="quoteText" cols="30" rows="10" class="form-control" ngModel #quoteText="ngModel"></textarea>
+      {{quoteText.value}}
     </div>
 
     <button type="submit" class="btn btn-sm btn-success" style="margin-top: 1em;">Add Quote</button>

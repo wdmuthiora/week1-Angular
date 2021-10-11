@@ -8,9 +8,14 @@ import { Quote } from '../quote'
 })
 export class QuotesComponent implements OnInit {
   quotes: Quote[] = [
-    new Quote('Wangui','Donna', 'Quote number one', new Date()),
-    new Quote('Muthoni', 'Daisy', 'Quote number two', new Date()),
-    new Quote('Muthiora', 'Dennis', 'Quote number three', new Date()),
+    new Quote('Wangui', 'Donna', 'Quote number one', new Date(2020, 3, 11)),
+    new Quote('Muthoni', 'Daisy', 'Quote number two', new Date(2020, 3, 12)),
+    new Quote(
+      'Muthiora',
+      'Dennis',
+      'Quote number three',
+      new Date(2020, 3, 13)
+    ),
   ];
 
   //increment the upvote
@@ -29,10 +34,12 @@ export class QuotesComponent implements OnInit {
     // quote.quoteText = this.addQuote.quoteText;
     this.quotes.push(quote);
   }
-  
+
   //delete a quote
   delete(index: number) {
-    let toPromptUser = confirm(`Are you sure you want to delete this quote ${this.quotes[index].quoteText}?`);
+    let toPromptUser = confirm(
+      `Are you sure you want to delete this quote ${this.quotes[index].quoteText}?`
+    );
     if (toPromptUser) {
       this.quotes.splice(index, 1);
     }
