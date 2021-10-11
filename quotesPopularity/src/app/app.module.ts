@@ -8,6 +8,7 @@ import { QuoteDetailedComponent } from './quote-detailed/quote-detailed.componen
 import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { FormsModule } from '@angular/forms';
 import { HighlightLeadDirective } from './highlight-lead.directive';
+import { QuoteDisplayComponent } from './quote-display/quote-display.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { HighlightLeadDirective } from './highlight-lead.directive';
     QuoteDetailedComponent,
     QuoteFormComponent,
     HighlightLeadDirective,
+    QuoteDisplayComponent,
   ],
   imports: [
     BrowserModule,
