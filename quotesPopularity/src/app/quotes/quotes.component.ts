@@ -10,8 +10,17 @@ export class QuotesComponent implements OnInit {
   quotes: Quote[] = [
     new Quote('Donna', 'Quote number one'),
     new Quote('Daisy', 'Quote number two'),
-    new Quote('Dennis', 'Quote number three')
+    new Quote('Dennis', 'Quote number three'),
   ];
+  //increment the upvote
+  upVote(index:number) {
+    this.quotes[index].upVote += 1;
+  };
+
+  //increment the downvote
+  downVote(index:number) {
+    this.quotes[index].downVote += 1;
+  };
 
   constructor() {}
 

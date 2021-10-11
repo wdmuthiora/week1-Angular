@@ -1,8 +1,8 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-6">
-      <div *ngFor="let quote of quotes">
-        <app-quote-detailed [quote]="quote" (toUpvote)="upVote($event, i)" (toDownvote)="downVote($event, i)"></app-quote-detailed>
+      <div *ngFor="let quote of quotes; let i=index">
+        <app-quote-detailed [quote]="quote" (toUpvote)="upVote(i)" (toDownvote)="downVote(i)"></app-quote-detailed>
       </div>
     </div>
     <div class="col-md-6">
