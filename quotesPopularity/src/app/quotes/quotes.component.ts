@@ -8,9 +8,9 @@ import { Quote } from '../quote'
 })
 export class QuotesComponent implements OnInit {
   quotes: Quote[] = [
-    new Quote('Wangui','Donna', 'Quote number one'),
-    new Quote('Muthoni', 'Daisy', 'Quote number two'),
-    new Quote('Muthiora', 'Dennis', 'Quote number three'),
+    new Quote('Wangui','Donna', 'Quote number one', new Date()),
+    new Quote('Muthoni', 'Daisy', 'Quote number two', new Date()),
+    new Quote('Muthiora', 'Dennis', 'Quote number three', new Date()),
   ];
 
   //increment the upvote
