@@ -8,7 +8,9 @@ import { Quote } from '../quote';
 })
 export class QuoteFormComponent implements OnInit {
   //create a property that holds the user-fed data
-  newQuote = new Quote('', '');
+  newQuote = new Quote('', '', '');
+  author!: string;
+  quoteText!: string;
 
   @Output() addQuote = new EventEmitter<Quote>();
 

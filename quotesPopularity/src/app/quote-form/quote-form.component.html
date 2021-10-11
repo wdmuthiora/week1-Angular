@@ -4,8 +4,18 @@
   <form #quoteForm="ngForm" (ngSubmit)="submitQuote()">
 
     <div class="form-group">
+      <label for="personSubmitting">Person Submitting</label>
+      <input type="text" id="author" required class="form-control" [(ngModel)]="newQuote.personSubmitting" personSubmitting="personSubmitting"
+        #author="ngModel">
+    
+    </div>
+
+    <div class="form-group">
       <label for="author">Author</label>
       <input type="text" id="author" required class="form-control" [(ngModel)]="newQuote.author" author="author" #author="ngModel">
+      <p>{{newQuote.author}}123</p>
+      
+
     </div>
 
     <div class="form-group">

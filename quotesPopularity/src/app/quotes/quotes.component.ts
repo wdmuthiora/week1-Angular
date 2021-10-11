@@ -8,10 +8,11 @@ import { Quote } from '../quote'
 })
 export class QuotesComponent implements OnInit {
   quotes: Quote[] = [
-    new Quote('Donna', 'Quote number one'),
-    new Quote('Daisy', 'Quote number two'),
-    new Quote('Dennis', 'Quote number three'),
+    new Quote('Wangui','Donna', 'Quote number one'),
+    new Quote('Muthoni', 'Daisy', 'Quote number two'),
+    new Quote('Muthiora', 'Dennis', 'Quote number three'),
   ];
+
   //increment the upvote
   upVote(index: number) {
     this.quotes[index].upVote += 1;
@@ -22,17 +23,22 @@ export class QuotesComponent implements OnInit {
     this.quotes[index].downVote += 1;
   }
 
+  //add a quote
+  addNewQuote(quote: Quote) {
+    // quote.author = this.addQuote.author;
+    // quote.quoteText = this.addQuote.quoteText;
+    this.quotes.push(quote);
+  }
+  
   //delete a quote
   delete(index: number) {
-
     let toPromptUser = confirm(
       `Are you sure you want to delete this quote ${this.quotes[index].quoteText}?`
     );
     if (toPromptUser) {
       this.quotes.splice(index, 1);
     }
-
-  };
+  }
 
   constructor() {}
 
