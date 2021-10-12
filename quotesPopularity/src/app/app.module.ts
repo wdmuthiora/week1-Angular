@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { HighlightLeadDirective } from './highlight-lead.directive';
 import { QuoteDisplayComponent } from './quote-display/quote-display.component';
 import { TimeLapsedPipe } from './time-lapsed.pipe';
+import { QuoteService } from './quote-service/quote.service';
 
 
 @NgModule({
@@ -22,12 +23,8 @@ import { TimeLapsedPipe } from './time-lapsed.pipe';
     QuoteDisplayComponent,
     TimeLapsedPipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  providers: [QuoteService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
