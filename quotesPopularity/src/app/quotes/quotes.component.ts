@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Quote } from '../quote'
+import { QuoteService } from '../quote-service/quote.service';
+
 
 @Component({
   selector: 'app-quotes',
@@ -8,7 +10,7 @@ import { Quote } from '../quote'
 })
 export class QuotesComponent implements OnInit {
   
-
+  quotes: Quote[];
   //increment the upvote
   upVote(index: number) {
     this.quotes[index].upVote += 1;
@@ -36,7 +38,9 @@ export class QuotesComponent implements OnInit {
     }
   }
 
-  constructor() {}
+  constructor(quoteService: QuoteService) {
+    this.quotes = quoteService.getQuotes();
+  }
 
   ngOnInit(): void {}
 }
