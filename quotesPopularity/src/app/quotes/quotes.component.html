@@ -1,10 +1,10 @@
 <div class="container-fluid">
-  <ng-progress></ng-progress>
   <div class="row">
    
     <div class="col-md-6">
       <hr>
-          
+      <ng-progress></ng-progress>
+   
       <div *ngFor="let quote of quotes; let i=index" >
         <app-quote-detailed [quote]="quote" (toUpvote)="upVote(i)" (toDownvote)="downVote(i)" (toDelete)="delete(i)">
         </app-quote-detailed>
