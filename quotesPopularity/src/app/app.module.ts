@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,8 +24,9 @@ import { QuoteService } from './quote-service/quote.service';
     QuoteDisplayComponent,
     TimeLapsedPipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [QuoteService],
   bootstrap: [AppComponent],
 })
+  
 export class AppModule {}

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Quote } from '../quote'
 import { QuoteService } from '../quote-service/quote.service';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { quotes } from '../quotesList';
 
 @Component({
   selector: 'app-quotes',
@@ -9,8 +10,10 @@ import { QuoteService } from '../quote-service/quote.service';
   styleUrls: ['./quotes.component.css'],
 })
 export class QuotesComponent implements OnInit {
-  
+
   quotes: Quote[];
+  quote!: Quote;
+
   //increment the upvote
   upVote(index: number) {
     this.quotes[index].upVote += 1;
@@ -23,8 +26,6 @@ export class QuotesComponent implements OnInit {
 
   //add a quote
   addNewQuote(quote: Quote) {
-    // quote.author = this.addQuote.author;
-    // quote.quoteText = this.addQuote.quoteText;
     this.quotes.push(quote);
   }
 
@@ -38,9 +39,24 @@ export class QuotesComponent implements OnInit {
     }
   }
 
-  constructor(quoteService: QuoteService) {
+  constructor(quoteService: QuoteService, private http: HttpClient) {
     this.quotes = quoteService.getQuotes();
   }
 
-  ngOnInit(): void {}
+  ngOnInit() {
+
+    interface ApiResponse {
+      author: string;
+      quote: string;
+    }
+
+    //incoming object from API//
+    this.http.get<ApiResponse>('http://quotes.stormconsultancy.co.uk/random.json').subscribe((data) => {
+      console.log(data)
+      let incomingApiData: any = data;
+      quotes.push(incomingApiData);
+      this.quote = new Quote( data.author, data.author, data.quote, new Date() );
+    })
+  }
+
 }
