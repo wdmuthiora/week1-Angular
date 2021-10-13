@@ -48,18 +48,16 @@ export class QuotesComponent implements OnInit {
     interface ApiResponse {
       author: string;
       quote: string;
+  
     }
 
     //incoming object from API//
     this.http.get<ApiResponse>('http://quotes.stormconsultancy.co.uk/random.json').subscribe((data) => {
       let incomingApiData: any = data;
-      var  author = data.author;
-      var  quoteText = data.quote;
-      
+   
+      console.log(data)
 
-      console.log(incomingApiData)
       quotes.push(incomingApiData);
-      console.log(quotes)
       this.quote = new Quote( data.author, data.author, data.quote, new Date() );
     })
   }
