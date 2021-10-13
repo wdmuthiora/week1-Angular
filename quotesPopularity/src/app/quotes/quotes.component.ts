@@ -32,7 +32,7 @@ export class QuotesComponent implements OnInit {
   //delete a quote
   delete(index: number) {
     let toPromptUser = confirm(
-      `Are you sure you want to delete this quote ${this.quotes[index].quoteText}?`
+      `Are you sure you want to delete this quote ${this.quotes[index].quote}?`
     );
     if (toPromptUser) {
       this.quotes.splice(index, 1);
@@ -52,9 +52,14 @@ export class QuotesComponent implements OnInit {
 
     //incoming object from API//
     this.http.get<ApiResponse>('http://quotes.stormconsultancy.co.uk/random.json').subscribe((data) => {
-      console.log(data)
       let incomingApiData: any = data;
+      var  author = data.author;
+      var  quoteText = data.quote;
+      
+
+      console.log(incomingApiData)
       quotes.push(incomingApiData);
+      console.log(quotes)
       this.quote = new Quote( data.author, data.author, data.quote, new Date() );
     })
   }

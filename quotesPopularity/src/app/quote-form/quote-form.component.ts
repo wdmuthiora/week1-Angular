@@ -9,10 +9,9 @@ import { Quote } from '../quote';
 export class QuoteFormComponent implements OnInit {
   //create a property that holds the user-fed data
   newQuote = new Quote('', '', '', new Date());
-
-  personSubmitting!: string;
+  id!: number;
   author!: string;
-  quoteText!: string;
+  quote!: string;
   dateCreated!:Date;
 
   @Output() addQuote = new EventEmitter<Quote>();
