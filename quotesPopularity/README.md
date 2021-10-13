@@ -2,6 +2,9 @@
 
 This project was deployed on [Quotes' Popularity App](https://wdmuthiora.github.io/week1-Angular/). It allows a user to add of delete Quotes, and each quote can be upvoted or downvoted, depending on its popularity.
 
+## ScreenShot
+<img src="src/assets/Quotes' popularity.png">
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
