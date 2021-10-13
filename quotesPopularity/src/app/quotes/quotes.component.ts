@@ -53,12 +53,16 @@ export class QuotesComponent implements OnInit {
 
     //incoming object from API//
     this.http.get<ApiResponse>('http://quotes.stormconsultancy.co.uk/random.json').subscribe((data) => {
+
       let incomingApiData: any = data;
    
-      console.log(data)
-
       quotes.push(incomingApiData);
-      this.quote = new Quote( data.author, data.author, data.quote, new Date() );
+   
+      this.quote = new Quote(data.author, data.author, data.quote, new Date());
+    }, err => {
+
+      this.quote = new Quote("Winston Churchill", "Never never give up!", "Never never give up!", new Date())
+      console.log("An error occurred");
     })
   }
 
