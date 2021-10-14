@@ -14,6 +14,8 @@ import { HighlightLeadDirective } from './highlight-lead.directive';
 import { QuoteDisplayComponent } from './quote-display/quote-display.component';
 import { TimeLapsedPipe } from './time-lapsed.pipe';
 import { QuoteService } from './quote-service/quote.service';
+import { QuoteRequestService } from './quote-http/quote-request.service';
+
 
 
 @NgModule({
@@ -34,7 +36,7 @@ import { QuoteService } from './quote-service/quote.service';
     NgProgressModule.forRoot(),
     NgProgressHttpClientModule,
   ],
-  providers: [QuoteService],
+  providers: [QuoteService, QuoteRequestService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Quote } from '../quote'
 import { QuoteService } from '../quote-service/quote.service';
+import { QuoteRequestService } from '../quote-http/quote-request.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { quotes } from '../quotesList';
 
@@ -39,11 +40,14 @@ export class QuotesComponent implements OnInit {
     }
   }
 
-  constructor(quoteService: QuoteService, private http: HttpClient) {
+  constructor(quoteService: QuoteService, private http: HttpClient, private quoteRequestService:QuoteRequestService) {
     this.quotes = quoteService.getQuotes();
   }
 
   ngOnInit() {
+    this.quoteRequestService.quoteRequest();
+    this.quote = this.quoteRequestService.quote;
+
 
     interface ApiResponse {
       author: string;
@@ -51,7 +55,7 @@ export class QuotesComponent implements OnInit {
   
     }
 
-    //incoming object from API//
+     //incoming object from API//
     this.http.get<ApiResponse>('http://quotes.stormconsultancy.co.uk/random.json').subscribe((data) => {
 
       let incomingApiData: any = data;
